@@ -2,11 +2,17 @@ package com.example.RESTfulwebservice.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
 public class User {
 	
 	long id;
+	
+	@Size(min=2, message="Name should have at least 2 chars")
 	String name;
+	
 	Date bithDay;
+	
 	public User(long id, String name, java.util.Date date) {
 		super();
 		this.id = id;

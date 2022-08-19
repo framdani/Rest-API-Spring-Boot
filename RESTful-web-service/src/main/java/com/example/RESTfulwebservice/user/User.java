@@ -4,11 +4,21 @@ import java.util.Date;
 
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description="Descript properties")
+//@JsonIgnoreProperties(value= {"id"})
 public class User {
 	
+//	@JsonIgnore
 	long id;
 	
 	@Size(min=2, message="Name should have at least 2 chars")
+	@ApiModelProperty(notes="Name should at least have 2 chars")
 	String name;
 	
 	Date bithDay;
